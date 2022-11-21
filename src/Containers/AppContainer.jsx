@@ -10,6 +10,8 @@ import Page from "../Pages/Page";
 import { DrawerActionButton } from "../Components/Drawer";
 import { MainContext } from "../Context/MainContext";
 
+import bgHome from "../Assets/images/bgHome-min.jpg";
+
 const AppContainer = () => {
 
     const { pageNumber, pageNumberHandler } = useContext(MainContext);
@@ -26,7 +28,7 @@ const AppContainer = () => {
                     onChangeIndex={pageNumberHandler}>
                     <Page index={0}>
                         <Box sx={{
-                            backgroundImage: `url(${require("../Assets/images/bgHome-min.jpg")})`,
+                            backgroundImage: `url(${bgHome})`,
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
