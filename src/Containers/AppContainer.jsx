@@ -8,7 +8,7 @@ import SidebarContainer from "./SidebarContainer";
 import PagesContainer from "./PagesContainer";
 import { DrawerActionButton } from "../Components/Drawer";
 import { MainContext } from "../Context/MainContext";
-import { Home } from "../Pages/index";
+import { Home, About } from "../Pages/index";
 import Page from "../Pages/Page";
 
 const AppContainer = () => {
@@ -30,7 +30,7 @@ const AppContainer = () => {
                         <Home/>
                     </Page>
                     <Page index={1}>
-                        <Typography variant="h5" sx={{textAlign: "center"}}>درباره ما</Typography>
+                        <About/>
                     </Page>
                     <Page index={2}>
                         <Typography variant="h5" sx={{textAlign: "center"}}>رزومه من</Typography>
