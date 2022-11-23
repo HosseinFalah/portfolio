@@ -6,7 +6,7 @@ import { MainContext } from "../Context/MainContext";
 const Page = ({children, index, ...others}) => {
     const { pageNumber } = useContext(MainContext);
     return (
-        <div
+        <Box
             role="tabpanel"
             hidden={pageNumber !== index}
             id={`tabpanel-${index}`}
@@ -15,7 +15,7 @@ const Page = ({children, index, ...others}) => {
             {pageNumber === index && (
                 <Box sx={{ height: "100vh", overflow: "hidden" }}>{children}</Box>
             )}
-        </div>
+        </Box>
     );
 }
 

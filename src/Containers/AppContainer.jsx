@@ -22,7 +22,7 @@ const AppContainer = () => {
             </SidebarContainer>
             <DrawerActionButton/>
             <PagesContainer>
-                <SwipeableViews 
+                <SwipeableViews
                     index={pageNumber}
                     onChangeIndex={pageNumberHandler}>
                     <Page index={0}>
