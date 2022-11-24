@@ -1,3 +1,4 @@
+
 import { Box, Typography, Chip, Avatar, Tooltip, IconButton, Link, Divider, Button } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import { 
@@ -206,9 +207,7 @@ const About = () => {
                         alignItems="center"
                         justifyContent='center'
                     >
-                        <Grid2
-                            sx={{ pt: 3 }}
-                        >
+                        <Grid2>
                             <Divider textAlign="right">
                                 <Chip
                                     variant="outlined"
@@ -221,9 +220,10 @@ const About = () => {
                                     } sx={{ p:3}}>
                                 </Chip>
                             </Divider>
-                            <Box sx={{ backgroundColor: '#1a1a1ab3', p: 5, mt: 4, borderRadius: 3, textAlign: 'left' }}>
+                            <Box sx={{ backgroundColor: '#1a1a1ab3', p: 5, my: 4, borderRadius: 3, textAlign: 'left' }}>
                                 <Typography variant="body1" color="#fff">حسین فلاح هستم برنامه نویس و توسعه دهنده جاوااسکریپت عاشق دنیای جذاب جاوااسکریپت و کتاب خونه هاش</Typography>
-                                <Typography variant="body2" color="#fff" sx={{ mt: 2 }}>متولد 1382 ساکن اندیمشک هستم از سال 1400 به دلیل علاقه زیاد در زمینه برنامه نویسی وب فعالیت خود را آغاز کردم و به صورت حرفه ای در دنیای جذاب جاوااسکریپت فعالیت میکنم</Typography>
+                                <Typography variant="body2" color="#fff" sx={{ mt: 2 }}>متولد 1382 ساکن اندیمشک هستم از سال 1400 به دلیل علاقه زیاد در زمینه برنامه نویسی وب فعالیت خود را آغاز کردم و به صورت حرفه ای در دنیای جذاب جاوااسکریپت فعالیت میکنم </Typography>
+                                <Typography variant="body2" color="#fff" sx={{ mt: 2 }}>به شدت تشنه و علاقه مند به یادگیریم</Typography>
                                 <Link 
                                     href="/Assets/Pdf/CvHosseinalah.pdf" 
                                     download 
