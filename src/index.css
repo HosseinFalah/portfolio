@@ -2,3 +2,11 @@ body{
     margin: 0;
     padding: 0;
 }
+
+/* hidden scrollBar */
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}

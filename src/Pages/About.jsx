@@ -28,7 +28,7 @@ const About = () => {
             width: 1,
             height: 1
         }}>
-            <Box component="div" sx={{ backgroundColor: 'rgba(0,0,0,.7)', height: 1}}>
+            <Box component="div" sx={{ backgroundColor: 'rgba(0,0,0,.7)', height: 1, overflowY: 'scroll'}}>
                 <Grid2 
                     container
                     maxWidth='lg'

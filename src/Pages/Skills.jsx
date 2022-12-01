@@ -76,7 +76,7 @@ const Skills = () => {
             width: 1,
             height: 1
         }}>
-            <Box sx={{ backgroundColor: 'rgba(0,0,0,.3)', height: 1 }}>
+            <Box sx={{ backgroundColor: 'rgba(0,0,0,.3)', height: 1, overflowY: 'scroll' }}>
                 <Typography variant="h3" color='#fff' textAlign='center' sx={{ pt: 4 }}>تخصص من</Typography>
                 <Grid2 
                     container
