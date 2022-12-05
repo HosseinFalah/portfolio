@@ -8,7 +8,7 @@ import SidebarContainer from "./SidebarContainer";
 import PagesContainer from "./PagesContainer";
 import { DrawerActionButton } from "../Components/Drawer";
 import { MainContext } from "../Context/MainContext";
-import { Home, About, Skills, ContactMe } from "../Pages/index";
+import { Home, About, Skills, ContactMe, Projects } from "../Pages/index";
 import Page from "../Pages/Page";
 
 const AppContainer = () => {
@@ -38,13 +38,14 @@ const AppContainer = () => {
                         <Skills/>
                     </Page>
                     <Page index={3}>
-                        <Typography variant="h5" sx={{textAlign: "center"}}>نمونه کار ها</Typography>
+                        {/* Projects Page */}
+                        <Projects/>
                     </Page>
                     <Page index={4}>
                         <Typography variant="h5" sx={{textAlign: "center"}}>نظرات مشتریان</Typography>
                     </Page>
                     <Page index={5}>
-                        {/* Contact Me*/}
+                        {/* Contact Me Page*/}
                         <ContactMe/>
                     </Page>
                 </SwipeableViews>

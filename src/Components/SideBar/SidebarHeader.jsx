@@ -28,7 +28,7 @@ const SidebarHeader = () => {
                 variant='caption' 
                 color={'whitesmoke'} 
                 sx={{textAlign: "center"}}>
-                Junior Front End Developer
+                Front End Developer
             </Typography>
         </>
     );

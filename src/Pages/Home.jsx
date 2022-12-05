@@ -12,7 +12,7 @@ const Home = () => {
     const infoRef = useRef(null);
 
     const strings = [
-        "MERN Stack Developer",
+        "Front End Developer",
         "Web Designer",
         "Freelancer"
     ];
