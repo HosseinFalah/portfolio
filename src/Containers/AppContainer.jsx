@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import MainLayout from "../Layouts/MainLayout";
 import SwipeableViews from "react-swipeable-views";
 import { Sidebar } from "../Components/SideBar";
@@ -13,7 +14,16 @@ import Page from "../Pages/Page";
 
 const AppContainer = () => {
 
-    const { pageNumber, pageNumberHandler } = useContext(MainContext);
+    const { pageNumber, pageNumberHandler, setDrawerOpen } = useContext(MainContext);
+
+    const theme = useTheme();
+    const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
+    useEffect(() => {
+        if (isMdUp) {
+            setDrawerOpen(false);
+        }
+    }, [isMdUp]);
 
     return (
         <MainLayout>
