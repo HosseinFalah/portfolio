@@ -13,7 +13,6 @@ import { Home, About, Skills, ContactMe, Projects } from "../Pages/index";
 import Page from "../Pages/Page";
 
 const AppContainer = () => {
-
     const { pageNumber, pageNumberHandler, setDrawerOpen } = useContext(MainContext);
 
     const theme = useTheme();

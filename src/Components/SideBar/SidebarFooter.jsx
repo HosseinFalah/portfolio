@@ -16,7 +16,7 @@ const SidebarFooter = () => {
         >
             <Typography 
                 variant='subtitle2' 
-                color="whitesmoke">
+                color="text.primary">
                     طراحی شده با 
                     <FavoriteRounded 
                         sx={{
@@ -25,7 +25,7 @@ const SidebarFooter = () => {
                             height: 20
                         }}/>
             </Typography>
-            <Typography variant='caption' color="whitesmoke" sx={{mt: 2}}>
+            <Typography variant='caption' color="text.primary" sx={{mt: 2}}>
                 کپی رایت 1401 
                 <CopyrightRounded sx={{verticalAlign: 'middle', height: 16}}/>
             </Typography>

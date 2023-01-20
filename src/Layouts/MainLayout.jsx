@@ -9,14 +9,14 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { theme } from "./Theme";
 
 //NOTE Create RTL Cache
-const cacheRTL = createCache({
-    key: "muirtl",
+const cacheRtl = createCache({
+    key: 'muirtl',
     stylisPlugins: [prefixer, rtlPlugin],
-});
+  });
 
 const MainLayout = ({children}) => {
     return (
-        <CacheProvider value={cacheRTL}>
+        <CacheProvider value={cacheRtl}>
             <ThemeProvider theme={theme}>
                 <Grid container sx={{height: "100vh"}}>
                     {children}

@@ -16,6 +16,7 @@ const SidebarTabs = () => {
             scrollButtons="auto"
             allowScrollButtonsMobile
             value={pageNumber}
+            textColor={"primary"}
             onChange={pageNumberHandler}>
                 {dataTab.map((tab) => (
                     <Tab 
@@ -24,14 +25,14 @@ const SidebarTabs = () => {
                         icon={tab.icon} 
                         iconPosition="start"
                         sx={{
-                            m: 1,
-                            '&.MuiTab-root': {
-                                backgroundColor: grey[800],
-                                borderRadius: 2,
-                                my: 0.5,
-                                mx: 1,
-                                minHeight: 50                            
-                            }
+                            backgroundColor: grey[800],
+                            color: "text.primary",
+                            borderRadius: 2,
+                            my: 0.5,
+                            mx: 1,
+                            "&.MuiTab-root": {
+                                minHeight: 50,
+                            },
                         }}
                         onClick={() => setDrawerOpen(false)}
                         {...tab}/>
