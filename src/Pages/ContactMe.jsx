@@ -1,20 +1,25 @@
 import { useFormik } from "formik";
 
+import ReCAPTCHA from "react-google-recaptcha";
 import { Box, Button, Container, InputAdornment, Link, TextField, Typography } from '@mui/material';
 import { LocalPhoneRounded, EmailRounded, Face6Rounded, SubjectRounded } from '@mui/icons-material';
 import { grey, purple, yellow } from '@mui/material/colors';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
+import { useTheme } from '@mui/material/styles'; // Grid version 2
 
 import bgContactMe from '../Assets/images/bgContact-main.jpg';
 
 import { contactValidationSchema } from "../Validations/ContactValidation";
 
 const ContactMe = () => {
+    const theme = useTheme();
+
     const contactInputNames = {
         fullname: "",
         subject: "",
         email: "",
-        message: ""
+        message: "",
+        recaptcha: ""
     };
 
     const formik = useFormik({
@@ -34,7 +39,7 @@ const ContactMe = () => {
             width: 1,
             height: 1
         }}>
-            <Box sx={{ backgroundColor: 'rgba(0,0,0,.5)', height: 1, overflowY: 'scroll' }}>
+            <Box sx={{ backgroundColor: 'rgba(0,0,0,.6)', height: 1, overflowY: 'scroll' }}>
                 <Container maxWidth="md">
                     <Typography variant="h4" color="#f0f0f0" sx={{textAlign: "center", my: 4}}>ارتباط با من</Typography>
                     <Typography variant="body2" color="#f0f0f0" sx={{textAlign: "center"}}>جهت درخواست انجام پروژه میتوانید با من در تماس باشید</Typography>
@@ -159,10 +164,26 @@ const ContactMe = () => {
                                     />
                             </Grid2>
                             <Grid2 xs={12}>
+                                <ReCAPTCHA 
+                                    sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                                    theme={theme.palette.mode}
+                                    hl="fa"
+                                    onChange={value => {
+                                        formik.setFieldValue("recaptcha", value);
+                                    }}/>
+                                    {
+                                        formik.errors.recaptcha && formik.touched.recaptcha &&
+                                            (
+                                                <Typography variant="caption" color="error">
+                                                    {formik.errors.recaptcha}
+                                                </Typography>
+                                            )
+                                    }
                                 <Button
                                     type="submit"
-                                    variant='contained' 
-                                    sx={{ 
+                                    variant='contained'
+                                    sx={{
+                                        mt: 2,
                                         color: grey[100],
                                         backgroundColor: purple[500],
                                         '&:hover': {

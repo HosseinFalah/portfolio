@@ -14,6 +14,7 @@
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
     "react-icon": "^1.0.0",
     "react-particles": "^2.5.3",
     "react-router-dom": "^6.3.0",
