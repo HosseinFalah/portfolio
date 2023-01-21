@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useContext } from "react";
 
-import { MainContext } from "../Context/MainContext";
+import { MainContext } from "../../Context/MainContext";
 
 const Page = ({children, index, ...others}) => {
     const { pageNumber } = useContext(MainContext);

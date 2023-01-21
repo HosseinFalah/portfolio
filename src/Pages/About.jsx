@@ -1,16 +1,20 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { Box, Typography, Chip, Avatar, Tooltip, IconButton, Link, Divider, Button } from '@mui/material';
+import { Box, Typography, Chip, Link, Button } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import { JavascriptRounded, Info } from '@mui/icons-material';
 
-import DevInfo from "./Components/DevInfo";
-import Resume from './Components/Resume';
+import { DevInfo, Resume } from "../Components/Pages/index";
 
 import profile from '../Assets/images/HosseinProfile.jpg';
 import bgAbout from '../Assets/images/bgAbout-main.jpg';
 
-import { aboutDev, socialMediaInfo } from '../Constants/aboutDev';
+import { aboutDev } from '../Constants/aboutDev';
+
+
+import CustomAvatar from '../Components/Common/CustomAvatar';
+import CustomDivider from '../Components/Common/CustomDivider';
+import SocialMedia from '../Components/SocialMedia';
 
 const About = () => {
     return (
@@ -28,51 +32,18 @@ const About = () => {
                     maxWidth='lg'
                     alignItems="center"
                     justifyContent='center'
-                    sx={{ 
-                        py: 5,
-                        px: {
-                            xl: 0,
-                            lg: 0,
-                            md: 4,
-                            sm: 4,
-                            xs: 4
-                        }
-                    }}
+                    sx={{ py: 5, px: { xl: 0, lg: 0, md: 4, sm: 4, xs: 4 } }}
                 >
-                    <Grid2
-                        xs={12}
-                        sm={12}
-                        md={4}
-                        lg={4}
-                        xl={4}
-                    >
-                        <Avatar
-                            src={profile}
+                    <Grid2 xs={12} sm={12} md={4} lg={4} xl={4} >
+                        <CustomAvatar
+                            avatar={profile}
                             variant="circular"
-                            sx={{
-                                height: 250,
-                                width: 250,
-                                border: '20px solid rgba(0, 0, 0, 0.4)',
-                                margin: 'auto',
-                                display: {
-                                    xl: 'block',
-                                    lg: 'block',
-                                    md: 'block',
-                                    sm: 'block',
-                                    xs: 'block'
-                                }
-                            }}
-                        >
-                        </Avatar>
+                            border="20px solid rgba(0, 0, 0, 0.4)"
+                            size={250}
+                            fallback="HF"
+                        />
                     </Grid2>
-                    <Grid2
-                        xs={12}
-                        sm={12}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        sx={{textAlign: 'end'}}
-                    >
+                    <Grid2 xs={12} sm={12} md={8} lg={8} xl={8} sx={{textAlign: 'end'}}>
                         <Chip
                             variant="outlined"
                             color="warning"
@@ -87,28 +58,14 @@ const About = () => {
                         {/* Info Developer */}
                         {aboutDev.map(item => (
                             <DevInfo 
-                                key={uuidv4()}
-                                content={item.content}
-                                icon={item.icon} 
+                            key={uuidv4()}
+                            content={item.content}
+                            icon={item.icon} 
                             />
-                        ))}
-                        <Box sx={{ mt: 3, gap: 2 }}>
-                            {socialMediaInfo.map(item => (
-                                <Link href={item.mediaLink} key={uuidv4()}>
-                                    <Tooltip title={item.mediaTitle}>
-                                            <IconButton sx={{
-                                                mr: 2,
-                                                transition: 'all 0.5s ease',
-                                                '&:hover': {
-                                                    backgroundColor: "#fff",
-                                                    color: item.mediaColor
-                                                }
-                                            }}>
-                                                {item.mediaIcon}
-                                            </IconButton>
-                                    </Tooltip>
-                                </Link>
                             ))}
+                        {/* SocialMedia */}
+                        <Box sx={{ mt: 3, gap: 2 }}>
+                            <SocialMedia/>
                         </Box>
                     </Grid2>
                 </Grid2>
@@ -116,30 +73,15 @@ const About = () => {
                     container 
                     alignItems="center"
                     justifyContent='center'
-                        sx={{
-                            px: {
-                                xl: 0,
-                                lg: 0,
-                                md: 4,
-                                sm: 4,
-                                xs: 4
-                            }
-                        }
-                    }
+                    sx={{ px: { xl: 0, lg: 0, md: 4, sm: 4, xs: 4 } }}
                 >
                     <Grid2>
-                        <Divider textAlign="right">
-                            <Chip
-                                variant="outlined"
-                                color="info"
-                                icon={<Info/>}
-                                label={
-                                    <Typography variant="body1">
-                                        درباره من
-                                    </Typography>
-                                } sx={{ p:3}}>
-                            </Chip>
-                        </Divider>
+                        <CustomDivider
+                            color="info"
+                            align="right"
+                            icon={<Info/>}
+                            text="درباره من"
+                        />
                         <Box sx={{ backgroundColor: '#1a1a1ab3', p: 5, my: 4, borderRadius: 3, textAlign: 'left' }}>
                             <Typography variant="body1" color="#fff">حسین فلاح هستم برنامه نویس و توسعه دهنده جاوااسکریپت عاشق دنیای جذاب جاوااسکریپت و کتاب خونه هاش</Typography>
                             <Typography variant="body2" color="#fff" sx={{ mt: 2 }}>متولد 1382 ساکن اندیمشک هستم از سال 1400 به دلیل علاقه زیاد در زمینه برنامه نویسی وب فعالیت خود را آغاز کردم و به صورت حرفه ای در دنیای جذاب جاوااسکریپت فعالیت میکنم </Typography>

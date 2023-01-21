@@ -10,7 +10,7 @@ import PagesContainer from "./PagesContainer";
 import { DrawerActionButton } from "../Components/Drawer";
 import { MainContext } from "../Context/MainContext";
 import { Home, About, Skills, ContactMe, Projects } from "../Pages/index";
-import Page from "../Pages/Page";
+import { Page } from "../Components/Pages";
 
 const AppContainer = () => {
     const { pageNumber, pageNumberHandler, setDrawerOpen } = useContext(MainContext);

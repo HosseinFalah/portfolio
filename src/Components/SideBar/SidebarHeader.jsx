@@ -1,23 +1,18 @@
-import { Avatar, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 import avatar from "../../Assets/images/HosseinProfile.jpg";
+import CustomAvatar from "../Common/CustomAvatar";
 
 const SidebarHeader = () => {
     return (
         <>
-            <Avatar
-                src={`${avatar}`}
+            <CustomAvatar
+                avatar={avatar}
                 variant="rounded"
-                sx={{height: 100, width: 100, margin: "0 auto", display: {
-                    xl: "block",
-                    lg: "block",
-                    md: "block",
-                    sm: "none",
-                    xs: "none"
-                }}}
-                >
-                HF
-            </Avatar>
+                border={null}
+                size={150}
+                fallback="HF"
+            />
             <Typography 
                 variant='h6' 
                 color={'whitesmoke'} 
