@@ -1,18 +1,27 @@
 import { Typography, Chip, Divider } from '@mui/material';
 
-const CustomDivider = ({ color, icon, align, text }) => {
+const CustomDivider = ({ bColor, color, icon, align, text }) => {
     return (
         <>
-            <Divider textAlign={align}>
-                <Chip
-                    variant="outlined"
-                    color={color}
-                    icon={icon}
+            <Divider textAlign={align} 
+                sx={{
+                    "&::before, &::after": { 
+                        borderColor: bColor 
+                    }
+                }}
+            >
+                <Chip 
+                    variant='outlined'
+                    icon={icon} 
+                    color={color} 
                     label={
-                        <Typography variant="body1">
+                        <Typography 
+                            variant='body1' 
+                            sx={{ textAlign: "center" }}
+                        >
                             {text}
                         </Typography>
-                    } sx={{ p:3}}>
+                    } sx={{ p: 3}} >
                 </Chip>
             </Divider>
         </>

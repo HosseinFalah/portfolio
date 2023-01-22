@@ -77,6 +77,7 @@ const About = () => {
                 >
                     <Grid2>
                         <CustomDivider
+                            bColor="info.main"
                             color="info"
                             align="right"
                             icon={<Info/>}
