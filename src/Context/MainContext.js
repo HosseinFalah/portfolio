@@ -7,11 +7,12 @@ const ContextProvaider = ({children}) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const pageNumberHandler = (event, newPage) => setPageNumber(newPage);
+    const handlePageChange = index => setPageNumber(index);
 
     return (   
         <MainContext.Provider 
             value={{ pageNumber, setPageNumber, pageNumberHandler,
-                    drawerOpen, setDrawerOpen}}
+                    drawerOpen, setDrawerOpen, handlePageChange}}
             >
             {children}
         </MainContext.Provider>

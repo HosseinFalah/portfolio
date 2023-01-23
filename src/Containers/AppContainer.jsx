@@ -13,7 +13,7 @@ import { Home, About, Skills, ContactMe, Projects } from "../Pages/index";
 import { Page } from "../Components/Pages";
 
 const AppContainer = () => {
-    const { pageNumber, pageNumberHandler, setDrawerOpen } = useContext(MainContext);
+    const { pageNumber, setDrawerOpen, handlePageChange } = useContext(MainContext);
 
     const theme = useTheme();
     const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -33,7 +33,7 @@ const AppContainer = () => {
             <PagesContainer>
                 <SwipeableViews
                     index={pageNumber}
-                    onChangeIndex={pageNumberHandler}>
+                    onChangeIndex={handlePageChange}>
                     <Page index={0}>
                         {/* Home Page */}
                         <Home/>
